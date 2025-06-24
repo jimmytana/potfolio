@@ -69,7 +69,7 @@
 
         .o {
             font-weight: 500;
-            color:var(--primary);
+            color: var(--primary);
 
         }
 
@@ -84,7 +84,7 @@
 
         .black {
             display: flex;
-            font-size:35px !important;
+            font-size: 35px !important;
 
         }
 
@@ -98,32 +98,38 @@
             position: relative;
             left: -30px;
         }
-        .hello::before{
+
+        .hello::before {
             content: "-- ";
         }
+
         .content {
             /* flex: 1; */
             padding: 10px;
-        
+
             padding-left: 37px;
             display: flex;
             gap: 20px;
             flex-direction: column;
 
         }
-        
+
         .am {
             font-size: 45px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
-        i{
+
+        i {
             font-size: 25px;
             cursor: pointer;
             transition: all .3s ease-in-out;
         }
-        i:hover{
+
+        i:hover {
             color: var(--primary);
+            font-size: 27px;
         }
+
         .name {
             font-weight: 700;
             color: var(--primary);
@@ -134,7 +140,8 @@
             gap: 15px;
             flex-direction: column;
         }
-        #but{
+
+        #but {
             display: flex;
             align-items: center;
             background-color: var(--primary);
@@ -145,10 +152,10 @@
             padding: 7px;
             border-radius: 5px;
             font-size: 16px;
-        
+
         }
 
-        #photo{
+        #photo {
             filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.128));
         }
 
@@ -158,14 +165,14 @@
             margin: 30px auto;
             display: flex;
             text-wrap: nowrap;
-            padding:1px 5px;
+            padding: 1px 5px;
             /* text-wrap: nowrap; */
             cursor: pointer;
         }
-        .role{
+
+        .role {
             font-size: 17px;
         }
-
     </style>
 </head>
 
@@ -186,7 +193,6 @@
                 &lt;
                 scroll down
             </div>
-
         </div>
         <div class="right">
             <div class="upper">
@@ -201,19 +207,16 @@
                     </div>
                     <div class="group">
                         <div class="am">I'm <span class="name">Jimmy tana</span></div>
-                    <div class="role">A full-stack developer</div>
+                        <div class="role">A full-stack developer</div>
                     </div>
                     <button id="but">Learn more</button>
-
                 </div>
                 <div class="photo">
                     <img src="developer.png" width="400px" id="photo" alt="photo">
                 </div>
             </div>
         </div>
-
     </div>
-
 </body>
 
 </html>
