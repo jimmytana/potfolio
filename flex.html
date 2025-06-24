@@ -1,11 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/phosphor-icons"></script>
+
     <title>Flex Layout Model</title>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: Inter;
+        }
+
+        :root {
+            --bg: #0e0520;
+        }
+
+        .container {
+            display: flex;
+            position: fixed;
+            height: 100%;
+            /* background-color: #0e0520; */
+            background: radial-gradient(circle at center,
+                    #80289b 0%,
+                    #350e4d 40%,
+                    #1A1A2E 75%,
+                    #020116 100%);
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .upper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 15px;
+            align-items: center;
+        }
+
+        .lower {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            overflow: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .simple {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .toggle-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+        }
+
+        button {
+            border-radius: 20px;
+            padding: 8px;
+            background: linear-gradient(-180deg, 
+                #5b177025 50%, #ffffff1b
+            );
+            box-shadow: 1px 1px 10px 0px rgba(128, 128, 128, 0.212);
+            transition: all .3s ease-in-out;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #80289b;
+        }
+        nav a{
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        .highlighted button {
+            background-color: #ac1ed0;
+        }
+        .togoleft {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+
+        }
+
+        .cards {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .plan ul{
+            line-height: 32px;
+        }
+        .upper-right{
+            display: flex;
+            align-items: center;
+            gap:10px;
+            border-radius: 20px;
+
+        }
+
+        .plans {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 50px;
+
+        }
+        .plan h2{
+            background: linear-gradient(90deg, #80289b2f, #80289b0f) ;
+            font-size: 15px;
+            width: min-content;
+            text-wrap: nowrap;
+            padding: 5px;
+            border-radius: 8px;
+        }
+        .plan .price {
+            font-weight: 600;
+            font-size: 35px;
+        }
+        .plan {
+            display: flex;
+            border: 1px solid gray;
+            flex-direction: column;
+            justify-content: flex-start;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+            gap: 20px;
+        }
+        .plan:hover{
+
+        }
+        .but button{
+            background: transparent;
+            border-radius: 0px;
+        }
+        .but .month{
+            background: linear-gradient(90deg, #c357de, #a042b3, #c357de);
+            border-radius: 20px;
+        }
+        .but{
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(180deg, #350e4d3b 60%, #e4c2f93b);
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 19px;
+            color: white;
+        }
+        li{
+            list-style: none;
+            gap: 5px;
+            color: rgba(156, 156, 156, 0.92);
+            text-wrap: nowrap;
+        }
+        .plan ul li::before {
+            display: inline;
+            content: "✅";
+
+        }
+        .toggle{
+            padding: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="upper">
+
+            <div class="logo"><img src="logo.png" width="10px">  Landzy</div>
+            <nav>
+                <a href="#"><i class="ph ph-check-circle"></i>About</a>
+                <a href="#">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">Blog</a>
+                <a href="#">Customer Stories</a>
+                <a href="#">Pages</a>
+            </nav>
+            <div class="upper-right">
+                <i class="ph ph-shopping-bag"></i>
+                <button>Buy Now</button>
+            </div>
+
+
+        </div>
+        <div class="lower">
+            <div class="simple">
+                <h1>Simple, straightforward pricing</h1>
+                <p class="subtext">Join 500,000+ professionals who use Landzy to boost their SaaS</p>
+            </div>
+            <div class="cards">
+                <div class="toggle-buttons">
+                    <div class="togoleft">
+                        <div class="but">
+                            <div class="toggle month">Monthly</div>
+                            <div class="toggle">Yearly</div>
+                        </div>
+
+                        <p class="saveup">save up to 15% by paying yearly</p>
+                    </div>
+                    <p class="view">view full plan comparison</p>
+
+                </div>
+                <div class="plans">
+                    <div class="plan">
+                        <h2>Basic Plan</h2>
+                        <p class="price">$49/month</p>
+                        <ul>
+                            <li>Unlimited marketing users</li>
+                            <li>1 database</li>
+                            <li>Limited analytics</li>
+                            <li>One custom domain</li>
+                            <li>Email support first 30 days</li>
+                        </ul>
+                        <button>Start Free Trial</button>
+                    </div>
+
+                    <div class="plan highlighted">
+                        <h2>Popular Plan</h2>
+                        <p class="price">$124/month</p>
+                        <ul>
+                            <li>3 databases</li>
+                            <li>Unlimited analytics</li>
+                            <li>Advanced automations</li>
+                            <li>Unlimited domains</li>
+                            <li>Email support 24/7 priority</li>
+                        </ul>
+                        <button>Start 7-day Free Trial</button>
+                    </div>
+
+                    <div class="plan">
+                        <h2>Pro Plan</h2>
+                        <p class="price">$299/month</p>
+                        <ul>
+                            <li>Unlimited databases</li>
+                            <li>Unlimited credits</li>
+                            <li>Webhooks and integrations</li>
+                            <li>Unlimited domains</li>
+                            <li>Email support 24/7 priority</li>
+                        </ul>
+                        <button>Start Free Trial</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
