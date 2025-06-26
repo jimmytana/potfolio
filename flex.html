@@ -147,10 +147,11 @@
             cursor: pointer;
             padding: 10px;
             border-radius: 10px;
+            transition: all .3s ease-in-out;
             gap: 20px;
         }
-        .plan:hover{
-
+        .plan:hover .plan::backdrop{
+            filter: blur(5px);
         }
         .but button{
             background: transparent;
@@ -199,7 +200,7 @@
 
             <div class="logo"><img src="logo.png" width="10px">  Landzy</div>
             <nav>
-                <a href="#"><i class="ph ph-check-circle"></i>About</a>
+                <a href="#">About</a>
                 <a href="#">Features</a>
                 <a href="#">Pricing</a>
                 <a href="#">Blog</a>
