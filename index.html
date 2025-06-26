@@ -1,68 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Styling</title>
-    <style>
-        *{
-            
-            box-sizing: border-box;
-        }
-        .bordered {
-            border: 2px solid black;
-            border-radius: 10px;
-            box-shadow: 2px 2px 20px -3px black;
-        }
-        #outer{
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
 
-        }
-        #left{
-            width: 50%;
-            padding: 10px;
-            position: relative;
-            background-color: aquamarine;
-        }
-        #right{
-            width: 50%;
-        }
-        #box1{
-            /* position: absolute; */
-            width: 100%;
-            height: 100%;
-        }
-        #right{
-            
-            display: flex;
-            width: 50%;
-            padding:10px ;
-            flex-direction: column;
-        }
-        .box2{
-            height: 50%;
-            width: 100%;
-            margin: 5px;
+  <meta charset="UTF-8">
+  <title>Luxora Travel Agency</title>
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-        }
-        
-    </style>
+    :root {
+
+      --pampas: #f0ebe8;
+      --celtic: #1c3324;
+      --finlandia: #5b7362;
+      --vista-blue: #7ad495;
+      --killarney: #2b5637;
+      --chicago: #615d5a;
+      --fuscous-gray: #444442;
+      --horizon: #5e8aa1;
+      --cape-palliser: #a96442;
+      --blumine: #1e5d6c;
+    }
+
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    .container {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--celtic);
+      width: 100%;
+      height: 100%;
+      font-family: "Open sans";
+    }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      color: black;
+      padding: 20px 20px;
+      background-color: white;
+
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      font-weight: 900;
+
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+
+    }
+    .selected-link{
+      color: #1c3324;
+      position: relative;
+      
+    }
+    .selected-link::after{
+      content: "•";
+      color: var(--vista-blue);
+      position: absolute;
+      top: 70%;
+      left: 45%;
+
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--fuscous-gray);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .actions button{
+      padding: 5px 10px;
+      border: 1px solid rgb(220, 220, 220);
+      background-color: rgb(255, 255, 255);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      color: black;
+      font-weight: 500;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .lower {
+      display: flex;
+      flex-direction: column;
+      /* background-color: yellow; */
+      flex: 1;
+      padding: 20px;
+      overflow: auto;
+      background-image: url("mosque.png");
+      background-blend-mode: multiply;
+      gap: 50px;
+    }
+    button i{
+      display: flex;
+      
+      margin: 10px;
+      align-items: center;
+      
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: row;
+      color: white;
+      justify-content: space-around;
+      /* background-color: indianred; */
+      align-items: center;
+    }
+
+    .field input, select {
+      border: none;
+      color: black !important;
+      background-color: white;
+      padding: 5px;
+      font-size: 18px;
+    }
+
+    .field .field-area {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field-label {
+
+      font-size: 10px;
+      font-weight: 600;
+      color: rgb(57, 57, 57);
+
+    }
+
+    .hero-text {
+      /* background-color: blue; */
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .hero-images {
+      /* background-color: #7ad495; */
+    }
+
+    .adventure {
+      color: var(--vista-blue);
+    }
+
+    .tab-options {
+      background-color: white;
+      max-width: min-content;
+      display: flex;
+
+      min-width: 100px;
+      position: relative;
+      border-radius: 10px 10px 0px 0px;
+    }
+
+    .form-fields {
+      background-color: white;
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      flex-wrap: wrap;
+      border-radius: 0px 0px 10px 10px;
+    }
+
+    .hero-text p {
+      font-size: 14px;
+      color: rgb(219, 219, 219);
+    }
+
+    .hero-text h1 {
+      font-size: 35px;
+      color: rgb(219, 219, 219);
+    }
+
+    .hero-text span {
+      background-color: var(--finlandia);
+      padding: 3px 10px;
+      font-size: 12px;
+      max-width: min-content;
+      font-weight: 600;
+      color: var(--vista-blue);
+      font-style: italic;
+      text-wrap: nowrap;
+      border-radius: 10px;
+    }
+
+    .booking-form {
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .trip-type {
+      background-color: white;
+      padding: 10px;
+      border-radius: 0px 10px 0px 0px;
+      border-bottom: 1px solid rgb(246, 246, 246);
+
+
+    }
+
+    .trip-type input {
+      accent-color: var(--vista-blue);
+      border: white;
+    }
+
+    .tab-options button {
+      margin: 0px;
+      height: 100%;
+      flex: 1;
+      padding: 10px;
+      border: 0px;
+      background-color: white;
+      font-weight: 600;
+      color: var(--fuscous-gray);
+      border-bottom: 1px solid rgb(246, 246, 246);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+
+      /* position: absolute; */
+    }
+
+    .tab-options i {
+      font-size: 15px;
+    }
+
+    #flights {
+
+      background-color: var(--vista-blue);
+      border-radius: 10px 0px 0px 0px;
+
+    }
+
+    .trip-type label {
+      font-weight: 500;
+      color: var(--fuscous-gray);
+    }
+
+    #Hotels {
+      border-radius: 0px 10px 0px 0px;
+
+    }
+
+    .field-area {
+      box-shadow: 0px 0px 4px 3px rgba(213, 213, 213, 0.635);
+      padding: 5px;
+      border-radius: 6px;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgb(57, 57, 57);
+    }
+
+    .field-group {
+      border-right: 1px solid rgba(213, 213, 213, 0.635);
+      padding: 5px;
+      display: flex;
+      gap: 10px;
+    }
+    #search{
+      background-color: var(--vista-blue);
+      border: none;
+      border-radius: 6px;
+      padding: 10px;
+      font-weight: 500;
+    }
+    #register-button{
+      background-color: var(--vista-blue);
+    }
+    
+    button{
+      display: flex;
+      flex-direction: column;
+      
+
+    }
+    
+  </style>
 </head>
+
 <body>
-    <div id="outer">
-        <div id="left">
 
-            <div id="box1" class="bordered"></div>
 
+  <div class="container">
+    <header>
+      <div class="logo">Luxora</div>
+      <nav>
+        <ul>
+          <li><a href="#" class="selected-link"> Home </a></li>
+          <li><a href="#"> About us </a></li>
+          <li><a href="#"> Services </a></li>
+          <li><a href="#"> Contact us </a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <select name="language">
+          <option value="en">En</option>
+        </select>
+        <button>Log in</button>
+        <button id="register-button">Register</button>
+      </div>
+    </header>
+
+
+    <div class="lower">
+      <section class="hero">
+        <div class="hero-text">
+          <span> #Top travel agency</span>
+          <h1> Book your next <br> <strong class="adventure">adventure</strong> today!</h1>
+          <p> Stop waiting for the right moment to explore the world! Start your journey of getting unforgettable
+            adventurous moments with us.</p>
         </div>
-        <div id="right">
-            <div class="box2 bordered" ></div>
-            <div class="box2 bordered" ></div>
+
+        <div class="hero-images">
+          <img src="traveler.png" alt="Traveler Girl" width="400">
         </div>
+      </section>
+
+      <!-- Booking Form -->
+      <section class="booking-form">
+        <div class="tab-options">
+          <button id="flights"><i class="ph-fill ph-airplane"></i> Flights</button>
+          <button id="Hotels"><i class="ph-fill ph-bed"></i> Hotels</button>
+        </div>
+        <form>
+          <div class="trip-type">
+            <label><input type="radio" name="trip" checked> Round-trip</label>
+            <label><input type="radio" name="trip"> One way</label>
+            <label><input type="radio" name="trip"> Multi-city</label>
+          </div>
+
+          <div class="form-fields">
+            <div class="field-group">
+              <div class="field">
+                <label> From </label>
+                <div class="field-area">
+                  <input type="text" placeholder="Mumbai" value="Mumbai" disabled>
+                  <span class="field-label">BOM Chatrapati Chivaji</span>
+                </div>
+              </div>
+              <div class="field">
+                <label>To</label>
+                <div class="field-area">
+                  <input type="text" value="Riyadh">
+                  <div class="field-label">RUH King Khaled</div>
+                </div>
+              </div>
+            </div>
+            <div class="field-group">
+              <div class="field">
+              <label>Departure</label>
+              <div class="field-area">
+                <input type="date" value="12/01/2025">
+                <div class="field-label">Thusday</div>
+              </div>
+            </div>
+            </div>
+            <div class="field-group">
+              <div class="field">
+                <label>Return</label>
+                <div class="field-area">
+                  <input type="date">
+                  <div class="field-label">Sunday</div>
+                </div>
+              </div>
+            </div>
+           <div class="field-group">
+      <div class="field">
+        <label>Travelers & Class</label>
+       <div class="field-area">
+        <select>
+          <option>1 Traveler </option>
+        </select>
+        <div class="field-label">Premium economy</div>
+       </div>
+      </div>
+
+  </div>
+            <div class="field-group">
+              <div class="field">
+                <button type="submit" id="search"><i class="ph ph-magnifying-glass"></i>Search</button>
+              </div>
+              
+            </div>
+          </div>
+        </form>
+      </section>
     </div>
+    
+  </div>
 </body>
+
 </html>
